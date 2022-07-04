@@ -1,0 +1,4 @@
+openssl genrsa -aes256 -out private.key 2048
+openssl rsa -in private.key -out private.key
+openssl req -new -x509 -nodes -sha1 -key private.key -out cert.crt -days 36500
+openssl req -x509 -new -nodes -key private.key -sha1 -days 36500 -out new.pem
